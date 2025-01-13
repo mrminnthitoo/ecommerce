@@ -1,10 +1,11 @@
-package com.emkvswwm.ecotrendz.api.response;
+package com.minnthitoo.ecommerce.controllers.api.response;
 
-import com.emkvswwm.ecotrendz.api.exceptions.errorcodes.ErrorCodes;
-import com.emkvswwm.ecotrendz.model.dto.RestResponse;
+import com.minnthitoo.ecommerce.controllers.api.errorcodes.ErrorCodes;
+import com.minnthitoo.ecommerce.models.dto.RestResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
@@ -23,6 +24,15 @@ public class ApiAdvice {
         return this.apiResponse.errorResponse(HttpStatus.BAD_REQUEST,
                 "Invalid Type.",
                 ErrorCodes.TYPE_ERROR,
+                error);
+    }
+
+    @ExceptionHandler(HttpMessageNotReadableException.class)
+    public ResponseEntity<RestResponse> handleHttpMessageNotReadableException(HttpMessageNotReadableException exception){
+        String error = exception.getMessage();
+        return this.apiResponse.errorResponse(HttpStatus.BAD_REQUEST,
+                "request body must be json format.",
+                ErrorCodes.FORMAT_ERROR,
                 error);
     }
 

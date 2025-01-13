@@ -1,7 +1,7 @@
-package com.emkvswwm.ecotrendz.api.response;
+package com.minnthitoo.ecommerce.controllers.api.response;
 
-import com.emkvswwm.ecotrendz.api.exceptions.errorcodes.ErrorCodes;
-import com.emkvswwm.ecotrendz.model.dto.RestResponse;
+import com.minnthitoo.ecommerce.controllers.api.errorcodes.ErrorCodes;
+import com.minnthitoo.ecommerce.models.dto.RestResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;

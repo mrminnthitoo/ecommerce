@@ -1,4 +1,4 @@
-package com.minnthitoo.ecommerce.model.dto;
+package com.minnthitoo.ecommerce.models.dto;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

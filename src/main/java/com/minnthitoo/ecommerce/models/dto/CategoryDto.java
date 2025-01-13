@@ -1,4 +1,4 @@
-package com.minnthitoo.ecommerce.model.dto;
+package com.minnthitoo.ecommerce.models.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

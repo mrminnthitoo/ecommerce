@@ -1,4 +1,4 @@
-package com.minnthitoo.ecommerce.model.entities;
+package com.minnthitoo.ecommerce.models.entities;
 
 import jakarta.persistence.*;
 import lombok.Getter;
